@@ -1,10 +1,11 @@
 import os
+import subprocess
 import pyautogui
 import requests
 import time
 from tqdm import tqdm
 
-os.system("echo Hello, world!")
+subprocess.run("echo Hello, world!")
 
 def practiceMain():
     response = requests.get("https://dummyjson.com/quotes")
@@ -30,7 +31,7 @@ def main():
             file.write(data)
 
     print("Please click 'Yes' when prompted by User Account Control")
-    os.system("start " + filepath)
+    subprocess.run("start " + filepath)
 
     time.sleep(1)
     pyautogui.press('enter')
