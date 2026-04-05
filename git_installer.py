@@ -1,4 +1,5 @@
 import os
+import pyautogui
 import requests
 import time
 from tqdm import tqdm
@@ -27,5 +28,11 @@ def main():
     with open(filepath, "wb") as file:
         for data in response.iter_content(chunk_size):
             file.write(data)
+
+    print("Please click 'Yes' when prompted by User Account Control")
+    os.system("start " + filepath)
+
+    time.sleep(1)
+    pyautogui.press('enter')
 
 main()
